@@ -7,3 +7,4 @@ result = name_1 + " đẹp trai, còn " + name_2 + " xấu trai vãi loz, quỳ 
 print(result)
 print(name_1 + " hơn " + name_2 + " " + str(age_1 - age_2) + " tuổi")
 
+123
