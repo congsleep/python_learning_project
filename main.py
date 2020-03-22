@@ -62,3 +62,38 @@ import data_file
 # print(monthConversion.get(11))
 
 #---------------------------------------------------
+# cun = 1
+# while cun <= 18:
+#     print("Cún đang " + str(cun) + " tuổi.")
+#     cun += 1
+#     print("Cún đã đủ tuổi")
+
+#---------------------------------------------------
+
+def doan_chu():
+    team_qc = ["Công", "Hoa", "Huyền", "Uyên"]
+    team_pd = ["Trí", "Trang"]
+    team_dev = ["Toàn", "Cường", "Linh"]
+    guess_qc = ""
+    guess_pd = ""
+    guess_dev = ""
+    guess_count = 0
+    guess_limit = 3
+    out_of_guess = False
+
+    while guess_qc not in team_qc or guess_pd not in team_pd or guess_dev not in team_dev:
+        if guess_count < guess_limit:
+            guess_qc = input("Lần " + str(guess_count + 1) + ". Hãy đoán tên 1 người trong team QC: ")
+            guess_pd = input("Lần " + str(guess_count + 1) + ". Hãy đoán tên 1 người trong team PD: ")
+            guess_dev = input("Lần " + str(guess_count + 1) + ". Hãy đoán tên 1 người trong team DEV: ")
+            guess_count += 1
+        else:
+            out_of_guess = True
+            print("Hết lượt rồi, thử lại sau nhé!")
+            return
+    if guess_count == 1 and guess_qc in team_qc and guess_pd in team_pd and guess_dev in team_dev:
+        print("Kinh thật, mới lần " + str(guess_count) + " đã đoán được rồi. Giỏi quá!")
+    else:
+        print("Chính xác! Mất " + str(guess_count) + " lần mới đoán được.")
+
+doan_chu()
